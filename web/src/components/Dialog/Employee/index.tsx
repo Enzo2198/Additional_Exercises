@@ -39,9 +39,15 @@ export default ({isOpen, onClose, employee, setEmployee, onSave}: EmployeeDialog
             setEmployee({...employee, position: newValue});
           }}
         />
-        <RadioGroup row>
-          <FormControlLabel value="active" control={<Radio />} label="Active" />
-          <FormControlLabel value="inactive" control={<Radio />} label="Inactive" />
+        <RadioGroup
+          row
+          name="status"
+          value={employee.status}
+          onChange={(event) => {
+            setEmployee({ ...employee, status: event.target.value })
+          }}>
+          <FormControlLabel value="Active" control={<Radio />} label="Active" />
+          <FormControlLabel value="Inactive" control={<Radio />} label="Inactive" />
         </RadioGroup>
       </Stack>
     </DialogContainer>

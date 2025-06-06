@@ -7,7 +7,7 @@
       "address": "Address 1",
       "salary": 3653,
       "position": "Director",
-      "status": "Active"
+      "status": "active"
     },
     {
       "id": "2",
@@ -835,60 +835,6 @@
       "address": "Address 94",
       "salary": 3009,
       "position": "Warehouse",
-      "status": "Active"
-    },
-    {
-      "id": "95",
-      "name": "Employee 95",
-      "age": 43,
-      "address": "Address 95",
-      "salary": 7760,
-      "position": "Hr",
-      "status": "Inactive"
-    },
-    {
-      "id": "96",
-      "name": "Employee 96",
-      "age": 35,
-      "address": "Address 96",
-      "salary": 4821,
-      "position": "Accountant",
-      "status": "Active"
-    },
-    {
-      "id": "97",
-      "name": "Employee 97",
-      "age": 21,
-      "address": "Address 97",
-      "salary": 4826,
-      "position": "Sale",
-      "status": "Active"
-    },
-    {
-      "id": "98",
-      "name": "Employee 98",
-      "age": 35,
-      "address": "Address 98",
-      "salary": 7124,
-      "position": "Warehouse",
-      "status": "Inactive"
-    },
-    {
-      "id": "99",
-      "name": "Employee 99",
-      "age": 24,
-      "address": "Address 99",
-      "salary": 7774,
-      "position": "Warehouse",
-      "status": "Active"
-    },
-    {
-      "id": "100",
-      "name": "Employee 100",
-      "age": 20,
-      "address": "Address 100",
-      "salary": 4152,
-      "position": "Director",
       "status": "Active"
     }
   ],

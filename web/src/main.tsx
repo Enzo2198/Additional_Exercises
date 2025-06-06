@@ -1,7 +1,7 @@
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import Product from './Day-31/Product'
-// import Employee from './pages/Employee'
+import Employee from './Day-32/Employee'
 // import Colors from './pages/Colors'
 // import TodoList from "./pages/TodoList"
 // import QuizApp from './pages/QuizApp'
@@ -23,10 +23,10 @@ const router = createBrowserRouter([
     path: "/product",
     element: <Product></Product>,
   },
-  // {
-  //   path: "/employee",
-  //   element: <Employee/>,
-  // },
+  {
+    path: "/employee",
+    element: <Employee/>,
+  },
   // {
   //   path: "/list",
   //   element: <TodoList/>,

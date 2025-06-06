@@ -6,7 +6,6 @@ import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import {memo} from "react";
 
 interface FTable {
-  tableName: string
   headers: Header[]
   rows: any[]
   onUpdate?: (id: number) => void
@@ -28,11 +27,10 @@ const RenderActionBtn = (
 }
 
 
-function FTableComponent ({tableName, headers, rows, onUpdate, onDelete, width=650}: FTable){
+function FTableComponent ({headers, rows, onUpdate, onDelete, width=650}: FTable){
 
   return (
     <>
-      <h2>{tableName}</h2>
       <TableContainer sx={{width, margin: 'auto'}} component={Paper}>
         <Table>
           <TableHead>
@@ -47,7 +45,7 @@ function FTableComponent ({tableName, headers, rows, onUpdate, onDelete, width=6
 
           <TableBody>
             {rows.map((row: any) => (
-              <TableRow key={row.id}>
+              <TableRow key={`employee-${row.id}`}>
                 {headers.map((header: Header) => {
                   if (header.name === 'action') {
                     return RenderActionBtn(row.id, onUpdate, onDelete);
