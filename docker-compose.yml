@@ -1,0 +1,13 @@
+services:
+  web:
+    container_name: additional-exercises
+    image: node:20.10.0
+    working_dir: /app/web
+    env_file:
+      - .env
+    volumes:
+      - './web:/app/web'
+    ports:
+      - '3000:3000'
+      - '4000:4000'
+    command: ["npm", "run", "start"]
