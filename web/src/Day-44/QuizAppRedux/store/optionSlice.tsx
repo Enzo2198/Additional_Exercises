@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import {questions} from "./questions.tsx";
-import { QuizState } from "../../../utils";
+import type { QuizState } from "../../../utils";
 
 const initialState: QuizState = {
   currentQuestion: 0,

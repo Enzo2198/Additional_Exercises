@@ -1,8 +1,8 @@
 import { useSelector, useDispatch } from "react-redux";
-import { questions } from "../store/questions.tsx";
+import { questions } from "../store/questions";
 import { Button, Box, Typography, Card, CardContent, Stack, Container} from "@mui/material";
 import { selectQuiz, nextQuiz, restartQuiz } from "./optionSlice.tsx";
-import {RootState} from "../store/store.ts";
+import type {RootState} from "../store/store";
 
 export default function Quiz() {
   const dispatch = useDispatch();
