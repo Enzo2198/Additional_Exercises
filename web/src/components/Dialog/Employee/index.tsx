@@ -1,6 +1,6 @@
 import {DialogContainer} from "../../index.ts";
 import {Autocomplete, RadioGroup, Stack, TextField, FormControlLabel, Radio} from "@mui/material";
-import {EmployeeDialogProp} from "../../../utils";
+import type {EmployeeDialogProp} from "../../../utils";
 
 export default ({isOpen, onClose, employee, setEmployee, onSave}: EmployeeDialogProp) => {
 

@@ -1,6 +1,6 @@
 import {DialogContainer} from "../../index.ts";
 import {Stack, TextField} from "@mui/material";
-import {ColorDialogProp} from "../../../utils";
+import type {ColorDialogProp} from "../../../utils";
 
 export default ({isOpen, onClose, color, setColor, onSave}: ColorDialogProp) => {
 

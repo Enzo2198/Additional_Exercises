@@ -1,5 +1,5 @@
 import {Button, Dialog, DialogActions, DialogContent, DialogTitle} from "@mui/material";
-import {DialogProp} from "../../../utils";
+import type {DialogProp} from "../../../utils";
 
 export default ({isOpen, onClose, children, onSave}: DialogProp)=> {
   return (
