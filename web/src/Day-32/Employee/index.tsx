@@ -18,7 +18,7 @@ const headers: Header[] = [
 export default () => {
   const [isOpenDialog, setIsOpenDialog] = useState<boolean>(false)
   const [curEmployee, setCurEmployee] = useState<Employee>({
-    id: 0,
+    id: '',
     name: '',
     age: 0,
     salary: 0,
@@ -27,37 +27,37 @@ export default () => {
     status: ''
   })
 
-  const defaultEmployee: Employee = {
-    id: 0,
-    name: '',
-    age: 0,
-    salary: 0,
-    address: '',
-    position: '',
-    status: ''
-  }
-
   const [employees, setEmployees] = useState<Employee[]>([])
 
   const onAdd = () => {
-    setCurEmployee(defaultEmployee)
+    setCurEmployee({
+      id: '',
+      name: '',
+      age: 0,
+      salary: 0,
+      address: '',
+      position: '',
+      status: ''
+    });
     setIsOpenDialog(true)
   }
 
-  const onUpdate = (id: number) => {
-    const found = employees.find(e => e.id === id)
-    if (found) {
+  const onUpdate = (id: string) => {
+    const employeeToUpdate = employees.find(e => e.id === id);
+    if (employeeToUpdate) {
       setCurEmployee({
-        ...found,
-        status: found.status
+        ...employeeToUpdate,
+        status: employeeToUpdate.status
       })
       setIsOpenDialog(true)
+    } else {
+      console.error(`Không tìm thấy sản phẩm với id: ${id}`)
     }
   }
 
 
 
-  const onDelete = async (id: number) => {
+  const onDelete = async (id: string) => {
     try {
       await api.delete(`/employees/${id}`)
       await getData()
@@ -68,15 +68,21 @@ export default () => {
 
 
   const onSave = async () => {
-    console.log(curEmployee)
-    setIsOpenDialog(false)
+    try {
+      setIsOpenDialog(false)
 
-    if (curEmployee.id) {
-      await api.put(`/employees/${curEmployee.id}`, toBody())
-      await getData()
-    } else {
-      await api.post('/employees', toBody())
-      await getData()
+      // @ts-ignore
+      const maxId = (Math.max(...employees.map(p => parseInt(p.id) || 0)) + 1).toString()
+
+      if (curEmployee.id) {
+        await api.put(`/employees/${curEmployee.id}`, toBody())
+        await getData()
+      } else {
+        await api.post('/employees', {...toBody(), id: maxId})
+        await getData()
+      }
+    } catch (e) {
+      console.error('Lỗi khi lưu sản phẩm:', e);
     }
   }
 

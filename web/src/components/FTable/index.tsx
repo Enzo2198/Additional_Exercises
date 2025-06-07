@@ -8,15 +8,15 @@ import {memo} from "react";
 interface FTable {
   headers: Header[]
   rows: any[]
-  onUpdate?: (id: number) => void
-  onDelete?: (id: number) => void
+  onUpdate?: (id: string) => void
+  onDelete?: (id: string) => void
   width: number
 }
 
 const RenderActionBtn = (
-  id: number,
-  onUpdate?: (id: number) => void,
-  onDelete?: (id: number) => void
+  id: string,
+  onUpdate?: (id: string) => void,
+  onDelete?: (id: string) => void
 ) => {
   return (
     <TableCell key={`action-${id}`}>
